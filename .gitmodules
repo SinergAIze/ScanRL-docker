@@ -1,0 +1,3 @@
+[submodule "gym-unrealcv"]
+	path = gym-unrealcv
+	url = https://github.com/darylperalta/gym-unrealcv.git
