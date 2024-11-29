@@ -1,0 +1,80 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+    // Name assigned to the container.
+    "name": "ScanRL - ${localEnv:USER}",
+    // Instructions for building the docker image.
+    "build": {
+        "dockerfile": "scanrl.Dockerfile",
+        "context": ".",
+        "args": {
+            "USERNAME": "${localEnv:USER}"
+        },
+        "options": [
+            "--shm-size=1g",
+            "--tag=scanrl:${localEnv:USER}"
+        ]
+    },
+
+    // Setup container environment variables:
+    "containerEnv": {
+        "CUDA_VISIBLE_DEVICES": "0", // GPU to use: "0", "1", or "all"
+        "SHELL": "/bin/bash"
+    },
+
+    // User devcontainer services/tools will run as. Separate to containerUser.
+    "remoteUser": "${localEnv:USER}", // default.
+
+    // Set container user to be same as host user.
+    "containerUser": "${localEnv:USER}", // default.
+    "updateRemoteUserUID": true, // default.
+
+    // Don't shutdown the container upon closing the connection.
+    "shutdownAction": "none",
+
+    // Container workspace: Mount this repo in the container user's '~'.
+    "workspaceMount": "type=bind,src=${localWorkspaceFolder},dst=/home/${localEnv:USER}/${localWorkspaceFolderBasename}",
+    "workspaceFolder": "/home/${localEnv:USER}/${localWorkspaceFolderBasename}",
+
+    // Extra bind mounts.
+    "mounts": [
+        { // Mount ~/.ssh directory.
+            "source": "${localEnv:HOME}/.ssh", // Host ~/.ssh.
+            "target": "/home/${localEnv:USER}/.ssh", // Container ~/.ssh.
+            "type": "bind"
+        }
+    ],
+
+    // Options with which to launch the docker container.
+    "privileged": true,
+    "runArgs": [
+        "--runtime=nvidia",
+        // Make gpu(s) visible inside the container.
+        "--gpus=all", // Use '"device=0"' / '"device=1"' to only see that GPU.
+        // Name assigned to the container.
+        "--name=scanrl_${localEnv:USER}",
+        "--ulimit",
+        "memlock=-1",
+        "--ulimit",
+        "stack=67108864"
+    ],
+
+    // Forward ports. This is mostly for ports that don't AutoForward.
+    // "forwardPorts": []
+
+    // Lifecycle scripts that run at different points of a container's life.
+    "initializeCommand": [".devcontainer/init_env.sh"],
+    "postCreateCommand": [".devcontainer/post_create.sh"],
+
+    // Features: Reusable install scripts. See https://containers.dev/features.
+    // "features": {},
+
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    }
+}
