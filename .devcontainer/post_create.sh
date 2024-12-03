@@ -48,8 +48,5 @@ cd $workdir
 # Install fork of gym-unrealcv in editable mode.
 python -m pip install --user -e gym-unrealcv/
 
-# Install `opencv` as required by `gym-unrealcv`.
-pip install "opencv-python==3.4.18.65"
-
 # Unset script options.
 set +eux
