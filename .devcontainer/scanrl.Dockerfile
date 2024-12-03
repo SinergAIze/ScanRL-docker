@@ -25,7 +25,11 @@ RUN apt-get update ; \
         unzip \
         vim \
         wget \
-        python3-tk
+        # Tkinter for Python debugger.
+        python3-tk \
+        # Required libs for cv2 / open3d.
+        libgl1 \
+        libsm6
 
 # Copy the .env file to the container.
 COPY .env /tmp/.env

@@ -71,12 +71,14 @@
     // Configure tool-specific properties.
     "customizations": {
         "vscode": {
-            "settings": {},
+            "settings": {
+                "extensions.autoUpdate": false
+            },
             "extensions": [
-                // Manually install the following verisons for debugging.
-                "ms-python.python",  // v2022.8.1
-                "ms-python.debugpy",  // v2023.3.13341006 (Enable pre-release)
-                "ms-python.vscode-pylance"  // v2022.6.30
+                "ms-python.python@2022.8.1",
+                "ms-python.debugpy@2023.3.13341006",
+                "ms-python.vscode-pylance@2022.6.30",
+                "tatsy.vscode-3d-preview"
             ]
         }
     }
