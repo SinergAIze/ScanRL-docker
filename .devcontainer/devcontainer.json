@@ -73,7 +73,10 @@
         "vscode": {
             "settings": {},
             "extensions": [
-                "ms-python.python"
+                // Manually install the following verisons for debugging.
+                "ms-python.python",  // v2022.8.1
+                "ms-python.debugpy",  // v2023.3.13341006 (Enable pre-release)
+                "ms-python.vscode-pylance"  // v2022.6.30
             ]
         }
     }
