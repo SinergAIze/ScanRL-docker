@@ -24,7 +24,8 @@ RUN apt-get update ; \
         zip \
         unzip \
         vim \
-        wget
+        wget \
+        python3-tk
 
 # Copy the .env file to the container.
 COPY .env /tmp/.env

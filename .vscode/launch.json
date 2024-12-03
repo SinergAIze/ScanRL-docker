@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ScanRL Inference",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/nzonca/ScanRL-docker/load_and_run_unreal.py",
+            "python": "${command:python.interpreterPath}",
+            "pythonArgs": [],
+            "args": [
+                "--model_path", "/home/nzonca/ScanRL-docker/models/new_bunny_3pen_89cov/models/DDQN_ENV_Bunny-v0_NB_EP_1000_BS_32_LR_0.00025_ep_10000.h5",
+                "--consecutive_frames", "6",
+                "--type", "DDQN",
+                "--env", "Bunny-v0",
+                "--epsilon", "0.0"
+            ],
+            "stopOnEntry": false,
+            "console": "integratedTerminal",
+            "purpose": [
+                "debug-in-terminal"
+            ],
+            "autoReload": {
+                "enable": true
+            },
+            "subProcess": false,
+            "cwd": "",
+            "redirectOutput": true,
+            "justMyCode": false,
+            "sudo": false,
+            "env": {
+                "TF_CPP_MIN_LOG_LEVEL": "1"
+            },
+            "envFile": "",
+            "gevent": false
+        }
+    ]
+}

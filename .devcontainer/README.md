@@ -16,7 +16,7 @@ when editing mounted files inside or outside the dev container.
 
 We achieve this by specifying the custom `scanrl.Dockerfile` that creates
 a user with matching credentials on top of a base Docker image
-([tensorflow/tensorflow:1.14.0-gpu-py3](https://hub.docker.com/layers/tensorflow/tensorflow/1.14.0-gpu-py3/images/sha256-e72e66b3dcb9c9e8f4e5703965ae1466b23fe8cad59e1c92c6e9fa58f8d81dc8?context=explore)).
+([tensorflow/tensorflow:1.14.0-gpu-py3](https://hub.docker.com/layers/tensorflow/tensorflow/1.14.0-gpu-py3/images/sha256-e72e66b3dcb9c9e8f4e5703965ae1466b23fe8cad59e1c92c6e9fa58f8d81dc8)).
 To edit the contents of the Docker image, you should only need to specify an
 existing image in this `.Dockerfile`'s `FROM <image-name>` line, but you can
 also include specific Dockerfile instructions.
