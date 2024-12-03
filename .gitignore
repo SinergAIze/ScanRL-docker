@@ -7,4 +7,6 @@ log/*.txt
 .env
 pycuda*
 *.egg-info/
+
 models/
+datasets/
