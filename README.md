@@ -1,4 +1,4 @@
-# Scan-RL: Next-Best View Policy for 3D Reconstruction
+# Scan-RL: Next-Best View Policy for 3D Reconstruction [Dev Container Fork]
 
 [Next-Best View Policy for 3D Reconstruction](http://arxiv.org/abs/2008.12664) to be presented at [2020 ECCV Wokshop](http://uavisionvisdrone.com/#/index/home).
 
@@ -13,10 +13,22 @@
 ### Diagram
 <img src='imgs/Diagram.png' width="500"/>
 
-## Setting up the Environment
-- Necessary Python packages can be found in [python_requirements.txt](python_requirements.txt).
-- To install the environments, you need to install our fork of [gym-unrealcv](https://github.com/darylperalta/gym-unrealcv). Additional instructions are included there.
+## Installation
 
+This is a fork of [Daryl's ScanRL](https://github.com/darylperalta/ScanRL),
+which includes a custom Dev Container setup to build and install a development
+or testing environment with all depedencies pinned and managed.
+
+If you're using an editor that supports the Dev Container standard
+(like VS Code), simply:
+1. Clone this repo.
+2. Open the repo in a new VS Code window.
+3. (CTRL+SHIFT+P or F1) > `Dev Containers: Reopen in Container`.
+
+If you want to avoid Dev Containers (even though they're useful!) you can just
+start from the `.devcontainer/scanrl.Dockerfile` and then install everything
+using the `post_create.sh` script, that automatically installs everything
+required.
 
 ### Single House Policy Experiment
 

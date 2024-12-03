@@ -15,9 +15,6 @@ git submodule update --init --recursive
 
 python -m pip install --user -U pip setuptools
 
-# Install numpy before all else (need for `pycuda==2017.1.1`)
-# python -m pip install --user numpy==1.14.5 # $(grep numpy requirements.txt)
-
 # Install dependencies from requirements.txt
 python -m pip install --user -r requirements.txt
 
@@ -50,6 +47,9 @@ cd $workdir
 
 # Install fork of gym-unrealcv in editable mode.
 python -m pip install --user -e gym-unrealcv/
+
+# Install `opencv` as required by `gym-unrealcv`.
+pip install "opencv-python==3.4.18.65"
 
 # Unset script options.
 set +eux
